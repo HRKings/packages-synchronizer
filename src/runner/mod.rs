@@ -1,6 +1,5 @@
 use anyhow::Result;
 use cmd_lib::run_fun;
-
 use crate::config::RawManager;
 
 pub fn get_current_packages(manager: &RawManager) -> Result<Vec<String>> {

@@ -5,6 +5,7 @@ use std::fs;
 use std::path::Path;
 use walkdir::WalkDir;
 
+
 /// The contents of the configuration file.
 #[derive(Debug, Default, Deserialize, Serialize)]
 #[serde(default)]
@@ -112,3 +113,4 @@ pub fn load_config(path: &str) -> Result<RawConfig> {
 
     Ok(result)
 }
+
