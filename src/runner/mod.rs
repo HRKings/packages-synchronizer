@@ -39,7 +39,7 @@ pub fn get_untracked_packages(manager: &RawManager) -> Result<Vec<String>> {
     let mut result: Vec<String> = Vec::new();
 
     for pkg in current {
-        if !tracked.contains(&pkg) && ignored.as_ref().is_some_and(|i| !i.contains(&pkg)) {
+        if !tracked.contains(&pkg) || ignored.as_ref().is_some_and(|i| !i.contains(&pkg)) {
             result.push(pkg);
         }
     }
