@@ -1,0 +1,213 @@
+[managers.arch]
+list_ignored_command = '''paclog --before="$(stat $HOME | rg 'Birth' | choose '1..')" | rg 'installed' | choose 3 | sort | uniq'''
+list_current_command = '''pacman -Qqen | sort | uniq'''
+install_command = '''sudo pacman --Syyu <#PKGS#>'''
+
+[managers.arch.base]
+packages = [
+  "atuin",                     # Terminal history manager
+  "b3sum",                     # Fast and secure hash
+  "broot",                     # Tree-like fuzzy-finder and navigator
+  "chezmoi",                   # Dotfiles manager
+  "curlie",                    # Modern version of curl
+  "discord",                   # Communication at its finest
+  "dog",                       # DNS tool, replacing dig
+  "erdtree",                   # Modern replacement for tree
+  "eza",                       # A better ls
+  "fd",                        # Faster and better find
+  "firefox",                   # Libre browser
+  "firefox-developer-edition", # Libre browser for developers
+  "glow",                      # TUI markdown viewer
+  "lbzip2",                    # Parallel BZip2
+  "meld",                      # GUI diff
+  "micro",                     # The evolution of nano
+  "neovim",                    # The only vim
+  "p7zip",                     # 7z (LZMA) support
+  "par2cmdline",               # File parity data
+  "paru",                      # Another AUR package manager
+  "pigz",                      # Parallel GZip
+  "pixz",                      # Parallel and indexed xz
+  "procs",                     # The evolution of ps
+  "qalculate-qt",              # The best calculator in existence
+  "ripgrep",                   # Search files, like grep
+  "ripgrep-all",               # Search anything but like grep
+  "rofi",                      # Highly customizable application launcher
+  "solaar",                    # Logitech MX peripherals support
+  "tealdeer",                  # Tldr provides example usages for some commands
+  "telegram-desktop",          # Because whatsapp is not that great
+  "tesseract",                 # OCR tool
+  "torbrowser-launcher",       # Privacy focused browser
+  "trash-cli",                 # Send files to the DE trash bin instead of obliterating them
+  "watchexec",                 # Listen for file changes and execute a command
+  "wireshark-qt",              # Network traffic monitoring like a hacker
+  "zenith",                    # Kinda like top
+  "zoxide",                    # Z auto-jumping
+]
+
+[managers.arch.system]
+packages = [
+  "bluedevil",                # Bluetooth support for KDE
+  "bluez",                    # Bluetooth support
+  "bluez-utils",
+  "bluez-tools",
+  "cargo-binstall",           # Install rust-based tools binaries
+  "cronie",                   # Crontab for ArchLinux
+  "cuda",                     # Cuda development support
+  "cudnn",
+  "dolphin-plugins",          # KDE Dolphin plugins
+  "ffmpegthumbnailer",        # Thumbnails for video formats
+  "ffmpegthumbs",             # Thumbnails for video formats, part 2
+  "flatpak",                  # Flatpack support
+  "helvum",                   # Pipewire patchbay
+  "hunspell",                 # Spellchecking and the english dictionary
+  "hunspell-en_us",
+  "hwinfo",                   # Hardware general info
+  "kdeconnect",               # KDE connection tool for inter-device integration
+  "kdegraphics-thumbnailers", # More thumbnails for Dolphin
+  "kgpg",                     # GPG GUI
+  "kimageformats",            # Support for more image formats in KDE
+  "kimageformats5",
+  "kio-extras",               # Additional functionality for KIO
+  "kitty",                    # Hardware accelerated terminal
+  "knotes",                   # KDE sticky notes
+  "ksshaskpass",              # GUI password prompt
+  "kwallet-pam",              # KWallet PAM integration
+  "kwalletmanager",           # KDE secret manager
+  "languagetool",             # Grammar and spelling corretion tool
+  "lshw",                     # To list the hardware
+  "ntfs-3g",                  # NTFS disks support
+  "nuspell",                  # Fast spell checking library
+  "oculante",                 # Fast image viwer
+  "partitionmanager",         # KDE partition manager
+  "qgis",                     # Manipulate and vizualize spatial data
+  "qt6-imageformats",         # Thumbnails for other image formats, like WEBP
+  "qt5-imageformats",
+  "rnote",                    # Infinite canvas intendend for drawing tablets
+  "rsync",                    # Copying tool for remote and local files, supports sync and backup
+  "sheldon",                  # Shell plugin manager
+  "smb4k",                    # SMB share support
+  "uutils-coreutils",         # Coreutils written in Rust for secutiry and cross-platform compatibility
+  "xclip",                    # Clipboard manager for the command line
+  "xdotool",                  # Send key presses via terminal
+  "xournalpp",                # A virtual handwritten notebook and PDF annotation tool
+  "yakuake",                  # Quake style terminal
+  "yazi",                     # A fast and beautiful TUI file manager
+  "zellij",                   # A modern and fast terminal multiplexer
+]
+
+[managers.arch.fonts]
+packages = [
+  "noto-fonts-emoji",  # OpenSource emoji font, because we like emojis, right?
+  "ttf-firacode-nerd", # FiraCode Nerd Font
+  "ttf-iosevka-nerd",  # A beautifully crafter terminal font (and I like Bloodborne)
+  "ttf-roboto",        # Roboto, a beautiful Google font
+]
+
+[managers.arch.utils]
+packages = [
+  "ge",               # Modern file encryption
+  "ria2",             # Fast download manager for the CLI
+  "sciinema",         # Terminal recording into text-format
+  "tool",             # Manage file archives of various types
+  "lender",           # 3D modeling and sculpiting
+  "top",              # A more advanced htop
+  "hoose",            # Modern alternativ to cut and (sometimes) awk
+  "hromium",          # A chromium engine is needed more times that you may think
+  "etox",             # Sanitize any filepath for Linux
+  "ua-cli",           # Disk usage visualizer
+  "uf",               # Quick disk usage and mount point vizualization
+  "dupes",            # Find duplicate files
+  "ilezilla",         # FTP Client
+  "zf",               # Fuzzy finder for any list
+  "ifski",            # High-quality GIF making
+  "imp",              # Image editor
+  "ping",             # Graphical ping utility
+  "um",               # Create better shell scripts
+  "tmlq",             # A terminal HTML parse/query tool
+  "yperfine",         # Benchmark CLI execution times
+  "mg2pdf",           # Convert images to PDF
+  "nkscape",          # Vector image editor
+  "notify-tools",     # Listen for filesystem changes
+  "c",                # Convert command outputs to JSON
+  "q",                # A terminal JSON parse/query tool
+  "rename",           # Batch renaming on steroids
+  "rita",             # Digital drawing software
+  "ibreoffice-fresh", # Because everyone needs to edit documents (fresh = latest version)
+  "pv",               # The best universal media player
+  "bsidian",          # Note taking to the extreme
+  "andoc-cli",        # Convert documents to more documents
+  "dfarranger",       # Arrange PDF pages
+  "eek",              # Easier screen recording
+  "ersepolis",        # GUI for aria2
+  "bittorrent",       # My preferred torrent client
+  "crcpy",            # Mirror an Android screen with audio
+  "d",                # A faster replacement for sed
+  "potify-launcher",  # Let's dance,   baby
+  "ermshark",         # Wireshark TUI
+  "hefuck",           # Correct your previous command
+  "hunderbird",       # Email client
+  "ime",              # Calculate time and RAM consumption for commands
+  "ree",              # Show a directory tree and parse one too
+  "rippy",            # Network diagnostic TUI
+  "ypst",             # A better latex
+  "narchiver",        # Decompress any archive
+  "nrar",             # Decompress RAR
+  "nzip",             # Decompress ZIP
+  "hs",               # Terminal recording in GIF
+  "lc",               # I like MPVm but sometimes I like GUIs
+  "hois",             # WHOIS?
+  "mctrl",            # Control X11 windows
+  "dg-utils",         # AAAAND OPEN!!! (a reference to Borderlands)
+  "t-dlp",            # Download videos
+]
+
+
+[managers.arch.development]
+packages = [
+  "asciinema",                # Record a terminal session
+  "bacon",                    # Rust background code checker
+  "bat",                      # Cat but with syntax highlighting
+  "difftastic",               # AST-based diff tool
+  "docker",                   # Containerize all the things
+  "docker-buildx",
+  "docker-compose",
+  "fx",                       # TUI JSON viwer
+  "git-delta",                # Next-Gen Diff engine
+  "git-filter-repo",          # Rewrite commit history quickly
+  "git-lfs",                  # Really large files support for Git, like your momma
+  "github-cli",               # Finer access to GitHub features
+  "gitui",                    # TUI Git, written in Rust
+  "go",                       # Go core compiler tools
+  "go-yq",                    # jq for YAML
+  "gource",                   # Git history visualization
+  "gpick",                    # Super advanced color picker
+  "hexyl",                    # Hex vizualizer for the CLI
+  "jdk-openjdk",              # Make and run Java apps
+  "just",                     # Just a command runner
+  "kondo",                    # Clean up non-essential files from projects
+  "kubectl",                  # Container hell management
+  "lazygit",                  # Git TUI
+  "mkcert",                   # Easily create certificates
+  "mold",                     # A faster linker (intendend for Rust)
+  "nvidia-container-toolkit", # Use NVidia GPUs inside containers
+  "nvtop",                    # View Nvidia GPU usage
+  "opencv",                   # Open Computer Vision
+  "renderdoc",                # OpenGL and Vulkan debugging tool
+  "rustup",                   # Rust management tool
+  "sccache",                  # Compiler artifacts caching
+  "shellcheck",               # Syntax and checker for shellscript
+  "traceroute",               # Vizualize the packets flying around the world
+  "uv",                       # Python all-in-one tool
+]
+
+[managers.arch.misc]
+packages = [
+  "cowsay",      # Because just printing to terminal is boring
+  "fastfetch",   # I use Arch btw
+  "fortune-mod", # And to have something for cows to say
+  "lolcat",      # Rainbow terminal
+  "mpv-mpris",   # MPRIS support for MPV
+  "ollama-cuda", # Run AI locally on NVidia GPUs
+  "onefetch",    # Visualize repository infos in a cool way
+  "qcad",        # 2D CAD software
+]

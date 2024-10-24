@@ -1,0 +1,8 @@
+[managers.go_tools]
+install_command = '''go install <#PKG#>@latest'''
+list_current_command = '''go version -m $GOPATH | rg path | choose 1'''
+
+[managers.go_tools.all]
+packages = [
+  "github.com/oklog/ulid/v2/cmd/ulid", # Generate and parse ULID
+]

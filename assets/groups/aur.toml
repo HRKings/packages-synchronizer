@@ -1,0 +1,92 @@
+[managers.aur]
+list_ignored_command = '''paclog --before="$(stat $HOME | rg 'Birth' | choose '1..')" | rg 'installed' | choose 3 | sort | uniq'''
+list_current_command = '''pacman -Qqem | sort | uniq'''
+install_command = '''paru --Syyu <#PKGS#>'''
+
+[managers.aur.base]
+packages = [
+  "brave-bin",           # A privacy-focused Chrome browser
+  "google-chrome",       # Chrome with sync
+  "google-chrome-dev",   # Chrome latest features
+  "nomachine",           # Remote control for PCs
+  "normcap",             # Select an area of the screen and send to OCR
+  "pacseek",             # TUI for downloading ArchLinux packages
+  "thorium-browser-bin", # Chrome with sync and faster with less Google, also adblocking
+  "zen-browser-bin",     # Firefox but fast and beautiful
+]
+
+[managers.aur.system]
+packages = [
+  "appimagelauncher-bin",        # Integrate AppImages in the system
+  "bt-dualboot",                 # Transfer bluetooth devices from Linux to Windows
+  "clipboard-bin",               # A feature-packed terminal clipboard manager
+  "gwe",                         # Green With Envy, a GUI for managing NVidia cards
+  "hunspell-pt-br",              # Portuguese spellcheck
+  "kwin-effects-forceblur",      # Blur transparent windows on KDE
+  "noto-color-emoji-fontconfig", # Fix KDE emoji problem
+  "opentabletdriver",            # Open Source drawing tablet drivers and configurator
+  "ov",                          # A very fast and feature-packed less alternative
+  "topgrade-bin",                # Update all packages and tools on the system
+  "ventoy-bin",                  # Multi ISO USB manager
+  "advcpmv",                     # mv and cp commands with progress indicators
+]
+
+[managers.aur.utils]
+packages = [
+  "1password",             # My favorite password manager
+  "1password-cli",
+  "cheat",                 # Vizualize cheatsheets on the terminal
+  "cobang",                # Scan QR codes with a GUI
+  "gallery-dl-bin",        # CLI image downloader for various sources
+  "jdownloader2",          # Download manager with support for various sites
+  "ookla-speedtest-bin",   # Speedtest.net CLI
+  "sshs-bin",              # SSH connection TUI
+  "streamdeck-ui",         # StreamDeck for Linux
+  "stretchly-bin",         # Take frequent breaks
+  "superproductivity-bin", # Personal Jira task manager
+  "youtube-music-bin",     # Look... Spotify doesn't have all the niche songs
+]
+
+[managers.aur.development]
+packages = [
+  "act",                    # Run GitHub actions locally
+  "bruno-bin",              # The best API tester and CURL wrapper (alternative to Postman)
+  "bun-bin",                # A JS runtime and better package manager
+  "gibo",                   # Github's gitignore collection from the CLI
+  "godot-mono-bin",         # The best 2D game engine out there
+  "imhex-bin",              # Hex editor and analyzer
+  "jetbrains-toolbox",      # Installs any JetBrains related product with one authentication
+  "kubecolor",              # Colorize kubectl output
+  "lazydocker-bin",         # A TUI for managing docker (because Docker Desktop sucks on Linux)
+  "material-maker-bin",     # Procedural textures generation (Substance Material)
+  "miniconda3",             # Let's be honest, venvs are better
+  "mockoon-bin",            # Mock APIs for easy frontend testing
+  "mongodb-compass",        # GUI for MongoDB
+  "surrealist-bin",         # GUI for SurrealDB
+  "tslab",                  # TypeScript support for Jupyter notebooks
+  "visual-studio-code-bin", # Proprietary VSCode, because we need things to work
+]
+
+[managers.aur.communication]
+packages = [
+  "discord-ptb",                 # Double profile for discord
+  "discord-ptb-update-skip-git", # Not all updates are cool
+  "whatsdesk-bin",               # I wanted to use only Telegram, but...
+]
+
+[managers.aur.misc]
+packages = [
+  "activitywatch-bin",             # Track time on the computer
+  "bottles",                       # A nice way to manage Wine environments
+  "gallery-dl-bin",                # Download images from various sources
+  "mpv-mpris",                     # Enable MPRIS for MPV
+  "photocollage",                  # Create photo collages
+  "pokemonsay-newgenerations-git", # Cowsay with pokemon
+  "shell-color-scripts",           # Visualize shell colors
+  "spicetify-cli",                 # Apply mods to Spotify
+  "streamlink-twitch-gui-bin",     # Watch Twitch streams via terminal (the webpage is too resource intensive)
+  "typioca",                       # Terminal typing speed tester
+  "typst-lsp-bin",                 # Latex 2.0 LSP
+  "upscayl-bin",                   # Upscale images using the GPU
+  "yt-dlp-drop-in",                # Youtube Downloader ease of use
+]

@@ -1,0 +1,9 @@
+[managers.dotnet_tools]
+install_command = '''dotnet tool install --global <#PKG#>'''
+list_current_command = '''dotnet tool list --global | tail -n +3 | choose 0'''
+
+[managers.dotnet_tools.all]
+packages = [
+  "dotnet-script", # Run .csx C# scripts
+  "csharprepl",    # Interactive C# shell
+]

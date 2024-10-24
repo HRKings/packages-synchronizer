@@ -1,0 +1,10 @@
+[managers.flatpak]
+install_command = '''flatpak install <#PKG#>'''
+list_current_command = '''flatpak list --app --columns=application | tail -n +1'''
+
+[managers.flatpak.all]
+packages = [
+  "com.chatterino.chatterino", # Twitch chat GUI
+  "com.obsproject.Studio",     # Screen recording and streaming
+  "re.sonny.Junction",         # Browser chooser when opening links
+]

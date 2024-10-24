@@ -1,0 +1,15 @@
+[managers.ollama]
+install_command = '''ollama pull <#PKG#>'''
+list_current_command = '''ollama list | choose 0 | tail -n +2'''
+
+[managers.ollama.all]
+packages = [
+  "bespoke-minicheck:latest", # Fact checking model (8b)
+  "duckdb-nsql:latest",       # DuckDB SQL generation model (7b)
+  "llama3.1:latest",          # General purpose Llama default model (8b)
+  "llama3.2:1b",              # General purpose Llama very small model
+  "llama3.2:3b",              # General purpose Llama small model
+  "llava:13b",                # Vision tasks Llama model
+  "qwen2.5-coder:1.5b",       # Coding tasks Qwen small model
+  "qwen2.5-coder:latest",     # Coding tasks Qwen default model (8b)
+]
