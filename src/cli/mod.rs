@@ -46,6 +46,18 @@ pub enum RawCommand {
         #[clap(value_name = "MANAGER")]
         manager: String,
     },
+    /// Show what packages are currently tracked
+    Tracked {
+        /// The manager to filter
+        #[clap(value_name = "MANAGER")]
+        manager: String,
+    },
+    /// Show what packages are currently installed
+    Current {
+        /// The manager to filter
+        #[clap(value_name = "MANAGER")]
+        manager: String,
+    },
     /// Show what packages are currently ignored
     Ignored {
         /// The manager to filter

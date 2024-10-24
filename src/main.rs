@@ -6,7 +6,9 @@ use anyhow::Result;
 use clap::Parser;
 use cli::{RawCommand, RawOpt};
 use config::load_config;
-use runner::{get_ignored_packages, get_untracked_packages};
+use runner::{
+    get_current_packages, get_ignored_packages, get_tracked_packages, get_untracked_packages,
+};
 
 fn main() -> Result<()> {
     let options = RawOpt::parse();
@@ -26,6 +28,14 @@ fn main() -> Result<()> {
         RawCommand::Untracked { manager } => print!(
             "{:?}",
             get_untracked_packages(&config.managers[manager.as_str()])
+        ),
+        RawCommand::Tracked { manager } => print!(
+            "{:?}",
+            get_tracked_packages(&config.managers[manager.as_str()])
+        ),
+        RawCommand::Current { manager } => print!(
+            "{:?}",
+            get_current_packages(&config.managers[manager.as_str()])
         ),
         RawCommand::Ignored { manager } => print!(
             "{:?}",
